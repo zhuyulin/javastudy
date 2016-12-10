@@ -20,7 +20,9 @@ public class NumberCover {
             sbf.insert(0, NUMBER[(int)(OrignNumber % 10)]);//插入值
             OrignNumber = OrignNumber / 10;
         }
-        return sbf.toString().replaceAll("零[仟佰拾]", "零").replaceAll("零+万", "万").replaceAll("零+亿", "亿").replaceAll("亿万", "亿零").replaceAll("零+", "零").replaceAll("零元", "元").replaceAll("零[角分]", "");
+        return sbf.toString().replaceAll("零[仟佰拾]", "零").replaceAll("零+万", "万").replaceAll("零+亿", "亿")
+                .replaceAll("亿万", "亿零").replaceAll("零+", "零").replaceAll("零元", "元")
+                .replaceAll("零[角分]", "");
     }
 
     public static void main(String[] args) {
