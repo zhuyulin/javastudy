@@ -5,12 +5,17 @@ package task2;
  */
 public class Test {
     public static void main(String[] args){
-        Shape square = new Square(Color.black,4,10);
-        System.out.println("长方形的面积"+square.area());
-        System.out.println("长方形的周长"+square.perimeter());
+        //Shape square = new Square(Color.black,4,10);
+        Square square = new Square(Color.black,4,10);
+        System.out.println("正方形的面积"+square.area());
+        System.out.println("正方形的周长"+square.perimeter());
+        System.out.println("正方形的颜色"+square.getColor());
 
-        Shape circle = new Circle(Color.black,4);
+
+        //Shape circle = new Circle(Color.black,4);
+        Circle circle = new Circle(Color.black,4);
         System.out.println("圆的面积"+circle.area());
         System.out.println("圆的周长"+circle.perimeter());
+        System.out.println("圆的颜色"+circle.getColor());
     }
 }
