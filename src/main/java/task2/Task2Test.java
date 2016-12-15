@@ -3,7 +3,7 @@ package task2;
 /**
  * Created by Yuleen on 2016/12/10.
  */
-public class Test {
+public class Task2Test {
     public static void main(String[] args){
         //Shape square = new Square(Color.black,4,10);
         Square square = new Square(Color.black,4,10);
