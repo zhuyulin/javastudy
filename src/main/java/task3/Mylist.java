@@ -48,27 +48,26 @@ public class Mylist {
     }
 
     public String toString() {
-        StringBuffer s = new StringBuffer();
+        StringBuilder display = new StringBuilder();
         Node node = head;
         for (int i = 0; i < size(); i++) {
             node = node.next;
-            if (i > 0)
-                s.append(", ");
-            s.append(node.date);
+            display.append(node.date);
         }
-
-        return s.toString();
+        return display.toString();
     }
 
 
     //节点处理
     private Node getNode(int location)
     {
-        if (location < 0 || location >= size())
+        if (location < 0 || location >= size()) {
             throw new IndexOutOfBoundsException();
+        }
         Node node = head.next;
-        for (int i = 0; i < location; i++)
+        for (int i = 0; i < location; i++) {
             node = node.next;
+        }
         return node;
     }
 
