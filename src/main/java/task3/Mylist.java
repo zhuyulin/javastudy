@@ -26,6 +26,10 @@ public class Mylist {
         addFront(new Node(date), head);
     }
 
+    public Object get(int location){
+        return getNode(location).date;
+    }
+
     public void remove(int location) {
         removeNode(getNode(location));
     }
@@ -38,9 +42,6 @@ public class Mylist {
         removeNode(head.prev);
     }
 
-    public Object get(int location) {
-        return getNode(location).date;
-    }
 
     public int size() {
         return this.size;
@@ -63,14 +64,15 @@ public class Mylist {
     //节点处理
     private Node getNode(int location)
     {
-        if (location < 0 || location >= size()) {
+        if (location < 0 || location >= size())
             throw new IndexOutOfBoundsException();
-        }
         Node node = head.next;
         for (int i = 0; i < location; i++)
-            node = node.next; // 每循环一次，节点往后挪一位
+            node = node.next;
         return node;
     }
+
+
     private void addFront(Node newNode, Node node)
     {
         newNode.next = node;

@@ -11,7 +11,6 @@ class Node
     Node next = this;
     Node(Object date) {
         this.date = date;
-
     }
     public String toString() {
         return date.toString();
