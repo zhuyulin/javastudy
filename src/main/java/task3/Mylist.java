@@ -9,20 +9,21 @@ public class Mylist {
     private int size; // 链表大小
 
     // 以下是数据处理
-    public void addHead(Object date) {
-        addBehind(new Node(date), head);
-    }
-
-    public void addTail(Object date) {
-        addFront(new Node(date), head);
-    }
-
     public void add(Object date) {
         addTail(date);
     }
 
     public void add(int location, Object date) {
         addFront(new Node(date), getNode(location));
+    }
+
+    public void addHead(Object date) {
+        addBehind(new Node(date), head);
+    }
+
+    public void addTail(Object date) {
+
+        addFront(new Node(date), head);
     }
 
     public void remove(int location) {
