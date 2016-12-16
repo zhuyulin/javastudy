@@ -10,7 +10,7 @@ public class Mylist {
 
     // 以下是数据处理
     public void add(Object date) {
-        addTail(date);
+        addFront(new Node(date), head);
     }
 
     public void add(int location, Object date) {
@@ -47,7 +47,7 @@ public class Mylist {
     }
 
     public String toString() {
-        StringBuffer s = new StringBuffer("[");
+        StringBuffer s = new StringBuffer();
         Node node = head;
         for (int i = 0; i < size(); i++) {
             node = node.next;
@@ -55,7 +55,7 @@ public class Mylist {
                 s.append(", ");
             s.append(node.date);
         }
-        s.append("]");
+
         return s.toString();
     }
 
@@ -75,16 +75,17 @@ public class Mylist {
     {
         newNode.next = node;
         newNode.prev = node.prev;
-        newNode.next.prev = newNode;
-        newNode.prev.next = newNode;
+        node.prev = newNode;
+        newNode.prev.next=newNode;
         size++;
     }
+
     private void addBehind(Node newNode, Node node)
     {
         newNode.prev = node;
         newNode.next = node.next;
+        node.next = newNode;
         newNode.next.prev = newNode;
-        newNode.prev.next = newNode;
         size++;
     }
     private void removeNode(Node node)
