@@ -9,12 +9,10 @@ class Node
     Object date;
     Node prev = this;
     Node next = this;
-    Node(Object date)
-    {
+    Node(Object date) {
         this.date = date;
     }
-    public String toString()
-    {
+    public String toString() {
         return date.toString();
     }
 }

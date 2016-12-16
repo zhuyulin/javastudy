@@ -68,7 +68,7 @@ public class Mylist {
         }
         Node node = head.next;
         for (int i = 0; i < location; i++)
-            node = node.next;
+            node = node.next; // 每循环一次，节点往后挪一位
         return node;
     }
     private void addFront(Node newNode, Node node)
