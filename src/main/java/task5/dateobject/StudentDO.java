@@ -25,7 +25,7 @@ public class StudentDO implements RowMapper,Serializable{
 
     @Override
     public String toString() {
-        return "StudentDO{" +
+        return "StudentDO={" +
                 "id=" + id +
                 ", sno='" + sno + '\'' +
                 ", sname='" + sname + '\'' +
