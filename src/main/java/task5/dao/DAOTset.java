@@ -17,9 +17,5 @@ public class DAOTset {
         for(int i = 0; i < studentDOList.size(); i++){
             System.out.println( studentDOList.get(i).toString());
         }
-
-
-
-
     }
 }
