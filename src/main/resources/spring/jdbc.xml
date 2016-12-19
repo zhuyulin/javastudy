@@ -17,4 +17,8 @@
     <bean id="studentDAO" class="task5.dao.StudentDAO">
         <property name="jdbcTemplate" ref="jdbcTemplate"/>
     </bean>
+
+    <bean id="tutorialDAO" class="task6_tutorial_jdbc.dao.TutorialDAO">
+        <property name="jdbcTemplate" ref="jdbcTemplate"/>
+    </bean>
 </beans>
