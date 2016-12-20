@@ -54,7 +54,9 @@ public class TutorialDAOTest {
         /**
          * task5：查出课程成绩在 80 分以上的女学生的姓名、课程名和成绩。（ FROM 子句中的子查询）
          */
-        List<CourseDO> taskList5 = CourseDAO.findByGrade(80,"F");
+
+        CourseDAO courseDAO = factory.getBean(CourseDAO.class);
+        List<CourseDO> taskList5 = courseDAO.findByGrade(80,"F");
         System.out.println("【5.查出课程成绩在 80 分以上的女学生的姓名、课程名和成绩。】");
         for (int i = 0; i < taskList5.size(); i++) {
             System.out.println("姓名：" + taskList5.get(i).getSname() + " " + "课程名：" + taskList5.get(i).getCname()+
