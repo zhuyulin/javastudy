@@ -40,6 +40,13 @@ public class CourseDO extends StudentsDO {
         this.grade = grade;
     }
 
+    @Override
+    public String toString() {
+        return "CourseDO={" +
+                ", sname='" + sname + '\'' +
+                '}';
+    }
+
     public Object mapRow(ResultSet rs, int i) throws SQLException {
         CourseDO courseDO = new CourseDO();
         courseDO.setSname(rs.getString("sname"));

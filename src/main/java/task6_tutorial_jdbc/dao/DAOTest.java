@@ -4,7 +4,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import task6_tutorial_jdbc.dateobject.StudentsDO;
 import task6_tutorial_jdbc.dateobject.CourseDO;
-
 import java.util.List;
 
 /**
@@ -14,6 +13,7 @@ public class DAOTest {
     public static void main(String[] args) {
         ApplicationContext factory = new ClassPathXmlApplicationContext("classpath:spring/jdbc.xml");
         StudentsDAO studentsDAO = factory.getBean(StudentsDAO.class);
+
 
         /**
          * task1：找出籍贯为河北的男生的姓名和年龄。
@@ -54,7 +54,6 @@ public class DAOTest {
         /**
          * task5：查出课程成绩在 80 分以上的女学生的姓名、课程名和成绩。（ FROM 子句中的子查询）
          */
-
         CourseDAO courseDAO = factory.getBean(CourseDAO.class);
         List<CourseDO> taskList5 = courseDAO.findByGrade(80,"F");
         System.out.println("【5.查出课程成绩在 80 分以上的女学生的姓名、课程名和成绩。】");
