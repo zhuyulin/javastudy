@@ -91,4 +91,5 @@ public class TutorialDO implements RowMapper,Serializable{
         tutorialDO.setBplace(rs.getString("bplace"));
         return tutorialDO;
     }
+
 }

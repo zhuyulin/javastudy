@@ -6,9 +6,20 @@ import java.sql.SQLException;
 /**
  * Created by Yuleen on 2016/12/20.
  */
-public class TutorialDO2 extends TutorialDO {
+public class CourseDO extends TutorialDO {
 
     private String cname;
+    private String sname;
+
+    @Override
+    public String getSname() {
+        return sname;
+    }
+
+    @Override
+    public void setSname(String sname) {
+        this.sname = sname;
+    }
 
     private Integer grade;
 
@@ -33,9 +44,10 @@ public class TutorialDO2 extends TutorialDO {
     }
 
     public Object mapRow(ResultSet rs, int i) throws SQLException {
-        TutorialDO2 tutorialDO = new TutorialDO2();
-        tutorialDO.setCname(rs.getString("cname"));
-        tutorialDO.setGrade(rs.getInt("grade"));
-        return tutorialDO;
+        CourseDO courseDO = new CourseDO();
+        courseDO.setSname(rs.getString("sname"));
+        courseDO.setCname(rs.getString("cname"));
+        courseDO.setGrade(rs.getInt("grade"));
+        return courseDO;
     }
 }

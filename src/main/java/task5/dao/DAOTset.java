@@ -15,7 +15,7 @@ public class DAOTset {
         List<StudentDO> studentDOList = studentDAO.findByName("张");
 
         for(int i = 0; i < studentDOList.size(); i++){
-            System.out.println( studentDOList.get(i).toString());
+            System.out.println(studentDOList.get(i).toString());
         }
     }
 }
