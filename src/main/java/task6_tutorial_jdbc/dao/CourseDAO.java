@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by Yuleen on 2016/12/20.
  */
-public class CourseDAO extends TutorialDAO {
+public class CourseDAO extends StudentsDAO {
 
     public List<CourseDO> findByGrade(Integer grade, String sex){
         List<CourseDO> courseDOList =

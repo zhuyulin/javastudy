@@ -6,7 +6,7 @@ import java.sql.SQLException;
 /**
  * Created by Yuleen on 2016/12/20.
  */
-public class CourseDO extends TutorialDO {
+public class CourseDO extends StudentsDO {
 
     private String cname;
 

@@ -7,7 +7,7 @@ import java.sql.SQLException;
 /**
  * Created by Yuleen on 2016/12/17.
  */
-public class TutorialDO implements RowMapper,Serializable{
+public class StudentsDO implements RowMapper,Serializable{
     private Integer id;
 
     private String sno;
@@ -78,14 +78,14 @@ public class TutorialDO implements RowMapper,Serializable{
 
     @Override
     public Object mapRow(ResultSet rs, int i) throws SQLException {
-        TutorialDO tutorialDO = new TutorialDO();
-        tutorialDO.setId(rs.getInt("id"));
-        tutorialDO.setSno(rs.getString("sno"));
-        tutorialDO.setSname(rs.getString("sname"));
-        tutorialDO.setAge(rs.getInt("age"));
-        tutorialDO.setSex(rs.getString("sex"));
-        tutorialDO.setBplace(rs.getString("bplace"));
-        return tutorialDO;
+        StudentsDO studentsDO = new StudentsDO();
+        studentsDO.setId(rs.getInt("id"));
+        studentsDO.setSno(rs.getString("sno"));
+        studentsDO.setSname(rs.getString("sname"));
+        studentsDO.setAge(rs.getInt("age"));
+        studentsDO.setSex(rs.getString("sex"));
+        studentsDO.setBplace(rs.getString("bplace"));
+        return studentsDO;
     }
 
 }
