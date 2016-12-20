@@ -20,6 +20,10 @@ public class StudentsDO implements RowMapper,Serializable{
 
     private String bplace;
 
+    private String cname;
+
+    private Integer grade;
+
     @Override
     public String toString() {
         return "StudentDO={" +
@@ -30,6 +34,23 @@ public class StudentsDO implements RowMapper,Serializable{
                 ", sex='" + sex + '\'' +
                 ", bplace='" + bplace + '\'' +
                 '}';
+    }
+
+
+    public String getCname() {
+        return cname;
+    }
+
+    public void setCname(String cname) {
+        this.cname = cname;
+    }
+
+    public Integer getGrade() {
+        return grade;
+    }
+
+    public void setGrade(Integer grade) {
+        this.grade = grade;
     }
 
     public Integer getId() {
@@ -85,6 +106,8 @@ public class StudentsDO implements RowMapper,Serializable{
         studentsDO.setAge(rs.getInt("age"));
         studentsDO.setSex(rs.getString("sex"));
         studentsDO.setBplace(rs.getString("bplace"));
+        //studentsDO.setCname(rs.getString("cname"));
+        //studentsDO.setGrade(rs.getInt("grade"));
         return studentsDO;
     }
 
