@@ -72,13 +72,9 @@ public class TutorialDO implements RowMapper,Serializable{
         this.sex = sex;
     }
 
-    public String getBplace() {
-        return bplace;
-    }
+    public String getBplace() { return bplace; }
 
-    public void setBplace(String bplace) {
-        this.bplace = bplace;
-    }
+    public void setBplace(String bplace) { this.bplace = bplace; }
 
     @Override
     public Object mapRow(ResultSet rs, int i) throws SQLException {

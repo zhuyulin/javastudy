@@ -9,7 +9,10 @@ import java.sql.SQLException;
 public class CourseDO extends TutorialDO {
 
     private String cname;
+
     private String sname;
+
+    private Integer grade;
 
     @Override
     public String getSname() {
@@ -21,24 +24,18 @@ public class CourseDO extends TutorialDO {
         this.sname = sname;
     }
 
-    private Integer grade;
-
-    @Override
     public String getCname() {
         return cname;
     }
 
-    @Override
     public void setCname(String cname) {
         this.cname = cname;
     }
 
-    @Override
     public Integer getGrade() {
         return grade;
     }
 
-    @Override
     public void setGrade(Integer grade) {
         this.grade = grade;
     }
