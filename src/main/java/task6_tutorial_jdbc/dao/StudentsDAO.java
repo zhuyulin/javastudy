@@ -34,10 +34,13 @@ public class StudentsDAO extends BaseDAO {
         return studentDOList;
     }
 
+    //update
     public List<StudentsDO> findByGrade(Integer grade, String sex){
         List<StudentsDO> studentDOList =
                 getJdbcTemplate().query("select\n" +
-                                "*\n" +
+                                "st.sname as sname,\n" +
+                                "c.cname as cname,\n" +
+                                "e.grade as grade\n" +
                                 "from\n" +
                                 "students st\n" +
                                 "LEFT JOIN\n" +

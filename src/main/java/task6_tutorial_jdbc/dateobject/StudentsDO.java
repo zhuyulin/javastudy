@@ -106,8 +106,9 @@ public class StudentsDO implements RowMapper,Serializable{
         studentsDO.setAge(rs.getInt("age"));
         studentsDO.setSex(rs.getString("sex"));
         studentsDO.setBplace(rs.getString("bplace"));
-        //studentsDO.setCname(rs.getString("cname"));
-        //studentsDO.setGrade(rs.getInt("grade"));
+        //update
+        studentsDO.setCname(rs.getString("cname"));
+        studentsDO.setGrade(rs.getInt("grade"));
         return studentsDO;
     }
 

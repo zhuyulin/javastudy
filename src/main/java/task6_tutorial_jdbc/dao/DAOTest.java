@@ -54,12 +54,13 @@ public class DAOTest {
         /**
          * task5：查出课程成绩在 80 分以上的女学生的姓名、课程名和成绩。（ FROM 子句中的子查询）
          */
-        //List<StudentsDO> taskList5 = studentsDAO.findByGrade(80,"F");
-        //System.out.println("【5.查出课程成绩在 80 分以上的女学生的姓名、课程名和成绩。】");
-        //for (int i = 0; i < taskList5.size(); i++) {
-        //    System.out.println("姓名：" + taskList5.get(i).getSname() + " " + "课程名：" + taskList5.get(i).getCname()+
-        //            "成绩："+taskList5.get(i).getGrade());
-        //}
+        //update
+        List<StudentsDO> taskList5 = studentsDAO.findByGrade(80,"F");
+        System.out.println("【5.查出课程成绩在 80 分以上的女学生的姓名、课程名和成绩。】");
+        for (int i = 0; i < taskList5.size(); i++) {
+            System.out.println("姓名：" + taskList5.get(i).getSname() + " " + "课程名：" + taskList5.get(i).getCname()+
+                    "成绩："+taskList5.get(i).getGrade());
+        }
 
     }
 }
