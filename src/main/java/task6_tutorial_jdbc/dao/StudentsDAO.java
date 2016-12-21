@@ -72,4 +72,36 @@ public class StudentsDAO extends BaseDAO {
         return studentDOList;
     }
 
+
+    public List<EnrollsDO> noCourseStudent(){
+        StringBuilder sbstr = new StringBuilder("select \n" +
+                "*" +
+                "from \n" +
+                "students s\n" +
+                "left join\n" +
+                "enrolls e on e.sno=s.sno\n" +
+                "left join \n" +
+                "courses c on c.cno=e.cno\n" +
+                "where\n" +
+                "c.cno is null");
+
+        List<EnrollsDO> studentDOList =
+                getJdbcTemplate().query(sbstr.toString(),
+                        new EnrollsDO(),null);
+        return studentDOList;
+    }
+
+
+    public List<StudentsDO> allCourseStudent(){
+        StringBuilder sbstr = new StringBuilder("select * from students\n" +
+                "where sno IN\n" +
+                "(select sno from enrolls\n" +
+                "group by sno\n" +
+                "having count(*) = (select count(*) from courses ))");
+        List<StudentsDO> studentDOList =
+                getJdbcTemplate().query(sbstr.toString(),
+                        new StudentsDO(),null);
+        return studentDOList;
+    }
+
 }

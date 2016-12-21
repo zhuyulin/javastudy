@@ -76,9 +76,23 @@ public class DAOTest {
 
         /**
          * task7：查询没有选任何课程的学生。
+         *
          */
+        List<EnrollsDO> taskList7 = studentsDAO.noCourseStudent();
+        System.out.println("【7.查询没有选任何课程的学生。】");
+        for (int i = 0; i < taskList7.size(); i++) {
+            System.out.println("姓名：" + taskList7.get(i).getSname());
+        }
 
-
+        /**
+         * task8：找出选修了全部课程的学生的姓名。
+         *
+         */
+        List<StudentsDO> taskList8 = studentsDAO.allCourseStudent();
+        System.out.println("【8.找出选修了全部课程的学生的姓名。】");
+        for (int i = 0; i < taskList8.size(); i++) {
+            System.out.println("姓名：" + taskList8.get(i).getSname());
+        }
 
     }
 }
