@@ -1,4 +1,4 @@
-package task3;
+package task3_tutorial_DoubleLinks;
 
 /**
  * Created by Yuleen on 2016/12/16.

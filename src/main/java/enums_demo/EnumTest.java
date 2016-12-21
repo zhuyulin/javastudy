@@ -1,4 +1,4 @@
-package enums;
+package enums_demo;
 import java.util.*;
 /**
  * Created by Yuleen on 2016/12/13.

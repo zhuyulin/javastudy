@@ -1,4 +1,4 @@
-package task5.dateobject;
+package task5_jbdc_demo.dateobject;
 import org.springframework.jdbc.core.RowMapper;
 import java.io.Serializable;
 import java.sql.ResultSet;

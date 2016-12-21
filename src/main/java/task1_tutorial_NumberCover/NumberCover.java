@@ -1,4 +1,4 @@
-package task1;
+package task1_tutorial_NumberCover;
 
 /**
  * Created by Yuleen on 2016/12/10.

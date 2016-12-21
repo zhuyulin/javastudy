@@ -1,9 +1,9 @@
-package task2;
+package task2_tutorial_Shape;
 
 /**
  * Created by Yuleen on 2016/12/10.
  */
-public class Task2Test {
+public class ShapeTest {
     public static void main(String[] args){
         //Shape square = new Square(Color.black,4,10);
         Square square = new Square(Color.black,4,10);

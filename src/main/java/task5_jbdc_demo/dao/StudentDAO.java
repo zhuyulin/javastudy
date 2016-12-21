@@ -1,5 +1,5 @@
-package task5.dao;
-import task5.dateobject.StudentDO;
+package task5_jbdc_demo.dao;
+import task5_jbdc_demo.dateobject.StudentDO;
 import java.util.List;
 
 /**

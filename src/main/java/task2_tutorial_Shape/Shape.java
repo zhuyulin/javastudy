@@ -1,4 +1,4 @@
-package task2;
+package task2_tutorial_Shape;
 
 /**
  * 1.父类“形状”，是抽象类。

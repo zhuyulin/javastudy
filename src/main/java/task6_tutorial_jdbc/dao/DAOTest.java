@@ -18,7 +18,7 @@ public class DAOTest {
 
 
         /**
-         * task1：找出籍贯为河北的男生的姓名和年龄。
+         * task1_tutorial_NumberCover：找出籍贯为河北的男生的姓名和年龄。
          */
 
         List<StudentsDO> taskList1 = studentsDAO.findByPlace("河北");
@@ -28,7 +28,7 @@ public class DAOTest {
         }
 
         /**
-         * task2：找出年龄在 20 ～ 23 岁之间的学生，并按年龄升序排序。
+         * task2_tutorial_Shape：找出年龄在 20 ～ 23 岁之间的学生，并按年龄升序排序。
          */
         List<StudentsDO> taskList2 = studentsDAO.findByAge(20, 23);
         System.out.println("【2.找出年龄在 20 ～ 23 岁之间的学生，并按年龄升序排序。】");
@@ -36,7 +36,7 @@ public class DAOTest {
             System.out.println(taskList2.get(i).toString());
         }
         /**
-         * task3：找出年龄小于 23 岁、籍贯是河南或河北的学生。
+         * task3_tutorial_DoubleLinks：找出年龄小于 23 岁、籍贯是河南或河北的学生。
          */
         List<StudentsDO> taskList3 = studentsDAO.findByAgeAndPlace(23, "河南", "河北");
         System.out.println("【3.找出年龄小于 23 岁、籍贯是河南或河北的学生。】");
@@ -45,7 +45,7 @@ public class DAOTest {
         }
 
         /**
-         * task4：找出学生表中籍贯是空值的学生.
+         * task4_log4j_demo：找出学生表中籍贯是空值的学生.
          */
         List<StudentsDO> taskList4 = studentsDAO.findByPlaceNull();
         System.out.println("【4.找出学生表中籍贯是空值的学生】");
@@ -54,7 +54,7 @@ public class DAOTest {
         }
 
         /**
-         * task5：查出课程成绩在 80 分以上的女学生的姓名、课程名和成绩。（ FROM 子句中的子查询）
+         * task5_jbdc_demo：查出课程成绩在 80 分以上的女学生的姓名、课程名和成绩。（ FROM 子句中的子查询）
          */
         List<EnrollsDO> taskList5 = studentsDAO.findByGrade(80, "F");
         System.out.println("【5.查出课程成绩在 80 分以上的女学生的姓名、课程名和成绩。】");

@@ -1,4 +1,4 @@
-package task5.dao;
+package task5_jbdc_demo.dao;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 

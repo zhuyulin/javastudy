@@ -1,7 +1,7 @@
-package task5.dao;
+package task5_jbdc_demo.dao;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import task5.dateobject.StudentDO;
+import task5_jbdc_demo.dateobject.StudentDO;
 
 import java.util.List;
 

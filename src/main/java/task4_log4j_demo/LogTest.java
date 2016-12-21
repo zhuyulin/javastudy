@@ -1,4 +1,4 @@
-package task4;
+package task4_log4j_demo;
 
 import org.slf4j.*;
 

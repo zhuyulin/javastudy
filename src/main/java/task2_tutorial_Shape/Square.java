@@ -1,4 +1,4 @@
-package task2;
+package task2_tutorial_Shape;
 
 /**
  * Created by Yuleen on 2016/12/10.
