@@ -36,19 +36,21 @@ public class StudentsDAO extends BaseDAO {
 
     //update
     public List<StudentsDO> findByGrade(Integer grade, String sex){
+        StringBuilder sbstr = new StringBuilder("select\n" +
+                "st.sname as sname,\n" +
+                "c.cname as cname,\n" +
+                "e.grade as grade\n" +
+                "from\n" +
+                "students st\n" +
+                "LEFT JOIN\n" +
+                "enrolls e on e.sno=st.sno\n" +
+                "LEFT JOIN\n" +
+                "courses c on c.cno=e.cno\n" +
+                "where \n" +
+                "e.grade > ? and st.sex = ?");
+
         List<StudentsDO> studentDOList =
-                getJdbcTemplate().query("select\n" +
-                                "st.sname as sname,\n" +
-                                "c.cname as cname,\n" +
-                                "e.grade as grade\n" +
-                                "from\n" +
-                                "students st\n" +
-                                "LEFT JOIN\n" +
-                                "enrolls e on e.sno=st.sno\n" +
-                                "LEFT JOIN\n" +
-                                "courses c on c.cno=e.cno\n" +
-                                "where \n" +
-                                "e.grade > ? and st.sex = ?",
+                getJdbcTemplate().query(sbstr.toString(),
                         new StudentsDO(),new Object[]{grade,sex});
         return studentDOList;
     }
