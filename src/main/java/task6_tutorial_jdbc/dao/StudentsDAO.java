@@ -1,5 +1,6 @@
 package task6_tutorial_jdbc.dao;
 
+import task6_tutorial_jdbc.dateobject.EnrollsDO;
 import task6_tutorial_jdbc.dateobject.StudentsDO;
 import java.util.List;
 
@@ -35,11 +36,9 @@ public class StudentsDAO extends BaseDAO {
     }
 
     //update
-    public List<StudentsDO> findByGrade(Integer grade, String sex){
+    public List<EnrollsDO> findByGrade(Integer grade, String sex){
         StringBuilder sbstr = new StringBuilder("select\n" +
-                "st.sname as sname,\n" +
-                "c.cname as cname,\n" +
-                "e.grade as grade\n" +
+                "*\n" +
                 "from\n" +
                 "students st\n" +
                 "LEFT JOIN\n" +
@@ -49,9 +48,9 @@ public class StudentsDAO extends BaseDAO {
                 "where \n" +
                 "e.grade > ? and st.sex = ?");
 
-        List<StudentsDO> studentDOList =
+        List<EnrollsDO> studentDOList =
                 getJdbcTemplate().query(sbstr.toString(),
-                        new StudentsDO(),new Object[]{grade,sex});
+                        new EnrollsDO(),new Object[]{grade,sex});
         return studentDOList;
     }
 

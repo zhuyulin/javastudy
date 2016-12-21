@@ -9,7 +9,8 @@ import java.sql.SQLException;
 /**
  * Created by Yuleen on 2016/12/17.
  */
-public class StudentsDO implements RowMapper, Serializable {
+public class EnrollsDO implements RowMapper, Serializable {
+
     private Integer id;
 
     private String sno;
@@ -22,6 +23,10 @@ public class StudentsDO implements RowMapper, Serializable {
 
     private String bplace;
 
+    private String cname;
+
+    private Integer grade;
+
     @Override
     public String toString() {
         return "StudentDO={" +
@@ -32,6 +37,23 @@ public class StudentsDO implements RowMapper, Serializable {
                 ", sex='" + sex + '\'' +
                 ", bplace='" + bplace + '\'' +
                 '}';
+    }
+
+
+    public String getCname() {
+        return cname;
+    }
+
+    public void setCname(String cname) {
+        this.cname = cname;
+    }
+
+    public Integer getGrade() {
+        return grade;
+    }
+
+    public void setGrade(Integer grade) {
+        this.grade = grade;
     }
 
     public Integer getId() {
@@ -84,14 +106,17 @@ public class StudentsDO implements RowMapper, Serializable {
 
     @Override
     public Object mapRow(ResultSet rs, int i) throws SQLException {
-        StudentsDO studentsDO = new StudentsDO();
-        studentsDO.setId(rs.getInt("id"));
-        studentsDO.setSno(rs.getString("sno"));
-        studentsDO.setSname(rs.getString("sname"));
-        studentsDO.setAge(rs.getInt("age"));
-        studentsDO.setSex(rs.getString("sex"));
-        studentsDO.setBplace(rs.getString("bplace"));
-        return studentsDO;
+        EnrollsDO enrollsDO = new EnrollsDO();
+        enrollsDO.setId(rs.getInt("id"));
+        enrollsDO.setSno(rs.getString("sno"));
+        enrollsDO.setSname(rs.getString("sname"));
+        enrollsDO.setAge(rs.getInt("age"));
+        enrollsDO.setSex(rs.getString("sex"));
+        enrollsDO.setBplace(rs.getString("bplace"));
+        //update
+        enrollsDO.setCname(rs.getString("cname"));
+        enrollsDO.setGrade(rs.getInt("grade"));
+        return enrollsDO;
     }
 
 }
