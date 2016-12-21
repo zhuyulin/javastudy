@@ -1,5 +1,6 @@
 package task6_tutorial_jdbc.dao;
 
+import task6_tutorial_jdbc.dateobject.AvgGradeDO;
 import task6_tutorial_jdbc.dateobject.EnrollsDO;
 import task6_tutorial_jdbc.dateobject.StudentsDO;
 import java.util.List;
@@ -35,7 +36,6 @@ public class StudentsDAO extends BaseDAO {
         return studentDOList;
     }
 
-    //update
     public List<EnrollsDO> findByGrade(Integer grade, String sex){
         StringBuilder sbstr = new StringBuilder("select\n" +
                 "*\n" +
@@ -51,6 +51,24 @@ public class StudentsDAO extends BaseDAO {
         List<EnrollsDO> studentDOList =
                 getJdbcTemplate().query(sbstr.toString(),
                         new EnrollsDO(),new Object[]{grade,sex});
+        return studentDOList;
+    }
+
+
+    public List<AvgGradeDO> sumAvgGrade(){
+        StringBuilder sbstr = new StringBuilder("SELECT\n" +
+                "stu.sname as sname,\n" +
+                "sum(e.grade)/count(distinct e.cno) as avggrade,\n" +
+                "count(distinct e.cno) as coursenumber\n" +
+                "FROM\n" +
+                "students stu\n" +
+                "LEFT JOIN\n" +
+                "enrolls e on e.sno=stu.sno\n" +
+                "group by stu.sname");
+
+        List<AvgGradeDO> studentDOList =
+                getJdbcTemplate().query(sbstr.toString(),
+                        new AvgGradeDO(),null);
         return studentDOList;
     }
 

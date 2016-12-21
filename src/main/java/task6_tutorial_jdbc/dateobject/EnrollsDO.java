@@ -29,16 +29,17 @@ public class EnrollsDO implements RowMapper, Serializable {
 
     @Override
     public String toString() {
-        return "StudentDO={" +
+        return "EnrollsDO{" +
                 "id=" + id +
                 ", sno='" + sno + '\'' +
                 ", sname='" + sname + '\'' +
                 ", age=" + age +
                 ", sex='" + sex + '\'' +
                 ", bplace='" + bplace + '\'' +
+                ", cname='" + cname + '\'' +
+                ", grade=" + grade +
                 '}';
     }
-
 
     public String getCname() {
         return cname;
@@ -113,7 +114,6 @@ public class EnrollsDO implements RowMapper, Serializable {
         enrollsDO.setAge(rs.getInt("age"));
         enrollsDO.setSex(rs.getString("sex"));
         enrollsDO.setBplace(rs.getString("bplace"));
-        //update
         enrollsDO.setCname(rs.getString("cname"));
         enrollsDO.setGrade(rs.getInt("grade"));
         return enrollsDO;

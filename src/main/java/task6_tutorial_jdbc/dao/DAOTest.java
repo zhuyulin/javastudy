@@ -2,6 +2,7 @@ package task6_tutorial_jdbc.dao;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import task6_tutorial_jdbc.dateobject.AvgGradeDO;
 import task6_tutorial_jdbc.dateobject.EnrollsDO;
 import task6_tutorial_jdbc.dateobject.StudentsDO;
 
@@ -55,13 +56,30 @@ public class DAOTest {
         /**
          * task5：查出课程成绩在 80 分以上的女学生的姓名、课程名和成绩。（ FROM 子句中的子查询）
          */
-        //update
         List<EnrollsDO> taskList5 = studentsDAO.findByGrade(80, "F");
         System.out.println("【5.查出课程成绩在 80 分以上的女学生的姓名、课程名和成绩。】");
         for (int i = 0; i < taskList5.size(); i++) {
             System.out.println("姓名：" + taskList5.get(i).getSname() + " " + "课程名：" + taskList5.get(i).getCname() +
-                    "成绩：" + taskList5.get(i).getGrade());
+                    " " + "成绩：" + taskList5.get(i).getGrade());
         }
+
+
+        /**
+         * task6：找出学生的平均成绩和所学课程门数。
+         */
+        List<AvgGradeDO> taskList6 = studentsDAO.sumAvgGrade();
+        System.out.println("【6.找出学生的平均成绩和所学课程门数。】");
+        for (int i = 0; i < taskList6.size(); i++) {
+            System.out.println("姓名：" + taskList6.get(i).getSname() + " " + "平均成绩：" + taskList6.get(i).getAvggrade()
+                    + " " +"课程数量：" + taskList6.get(i).getCoursenumber());
+        }
+
+        /**
+         * task7：查询没有选任何课程的学生。
+         */
+
+
 
     }
 }
+
