@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class DAOTset {
     public static void main(String[] args) {
-        ApplicationContext factory = new ClassPathXmlApplicationContext("classpath:spring/jdbc.xml");
+        ApplicationContext factory = new ClassPathXmlApplicationContext("classpath:spring/spring-task5.xml");
         StudentDAO studentDAO = factory.getBean(StudentDAO.class);
         List<StudentDO> studentDOList = studentDAO.findByName("张");
 
