@@ -10,6 +10,9 @@ import java.sql.SQLException;
  * Created by Yuleen on 2016/12/17.
  */
 public class StudentsDO implements RowMapper, Serializable {
+
+    private static final Long serialVersionUID = 264873242836478236l;
+    
     private Integer id;
 
     private String sno;

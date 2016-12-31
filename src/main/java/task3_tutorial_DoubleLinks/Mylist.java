@@ -4,30 +4,30 @@ package task3_tutorial_DoubleLinks;
  * Created by Yuleen on 2016/12/16.
  */
 
-public class Mylist {
+public class Mylist<T> {
     private Node head = new Node(null); // 头节点
     private int size; // 链表大小
 
     // 以下是数据处理
-    public void add(Object date) {
+    public void add(T date) {
         addFront(new Node(date), head);
     }
 
-    public void add(int location, Object date) {
+    public void add(int location, T date) {
         addFront(new Node(date), getNode(location));
     }
 
-    public void addHead(Object date) {
+    public void addHead(T date) {
         addBehind(new Node(date), head);
     }
 
-    public void addTail(Object date) {
+    public void addTail(T date) {
 
         addFront(new Node(date), head);
     }
 
-    public Object get(int location){
-        return getNode(location).date;
+    public T get(int location){
+        return (T) getNode(location).date;
     }
 
     public void remove(int location) {
