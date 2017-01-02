@@ -49,24 +49,34 @@ public class StringTest {
         test.setText3("1234567890abcdefg");
 
         Class<?> c1 = StringTest.class;
-        for (int i = 0; i < 3; i++) {
-            String methodName = ("setText" + i);
-            Method method = c1.getMethod(methodName);
-            method.invoke(c1, new Object[] {});
-        }
-
         Field[] fields = StringTest.class.getDeclaredFields();
         for (Field field : fields) {
             StringLimit sl = field.getAnnotation(StringLimit.class);
-            if (sl != null)
+            if (sl != null){
+                //把首字母小写的变量名转化为首字母大写的方法名
+                    String setFunction = field.getName().replaceFirst(field.getName().substring(0, 1),
+                            field.getName().substring(0, 1).toUpperCase());
+                    //生成set方法名
+                    String methodNameSet = ("set"+setFunction);
+                    //生成get方法名
+                    String methodNameGet = ("get"+setFunction);
+                    //获取set、get方法
+                    Method methodSet = c1.getMethod(methodNameSet,String.class);
+                    Method methodGet = c1.getMethod(methodNameGet);
+                    //实例化
+                    StringTest stringTest = (StringTest) c1.newInstance();
+                    //字符串截取
+                    String newString = methodGet.invoke(stringTest).toString().substring(0,
+                        field.getAnnotation(StringLimit.class).maxLength());
+                    methodSet.invoke(stringTest,newString);
+                    System.out.println(methodGet.invoke(stringTest));
 
+                }
             }
 
 
         }
     }
-    }
-
 
 
 
