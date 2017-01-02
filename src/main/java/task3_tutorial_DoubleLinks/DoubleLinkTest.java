@@ -7,7 +7,7 @@ public class DoubleLinkTest
 {
     public static void main(String[] args)
     {
-        Mylist<Object> test = new Mylist<>();
+        Mylist<Object> test = new Mylist<Object>();
         //添加节点
         test.add("A");
         test.add("B");
