@@ -39,9 +39,7 @@ public class TestStudentService extends AbsSpringMockTest {
         studentDO.setSno("1123");
         studentDO.setSname("张三");
         studentDOS.add(studentDO);
-
         when(studentDAO.findByName(any(String.class))).thenReturn(studentDOS);
-
         List<StudentDO> dos = studentService.findByName("abc");
         Assert.assertEquals(dos.get(0).getSno(),"1123");
     }
