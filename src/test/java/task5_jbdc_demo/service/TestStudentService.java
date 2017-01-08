@@ -43,4 +43,34 @@ public class TestStudentService extends AbsSpringMockTest {
         List<StudentDO> dos = studentService.findByName("abc");
         Assert.assertEquals(dos.get(0).getSno(),"1123");
     }
+
+    @Test
+    public void testTransactional(){
+        studentService.update2Student(1,2,20,true);
+        try {
+            studentService.update2Student(1, 2, 16, false);
+        }catch (Exception e){
+            System.out.println("error");
+        }
+    }
+
+    @Test
+    public void testNoTransactional(){
+        studentService.update2Student(1,2,20,true);
+        try {
+            studentService.update2StudentNoTrans(1, 2, 16, false);
+        }catch (Exception e){
+            System.out.println("error");
+        }
+    }
+
+    @Test
+    public void testTransactional2(){
+        studentService.update2Student(1,2,20,true);
+        try {
+            studentService.update2Student2(1, 2, 16, false);
+        }catch (Exception e){
+            System.out.println("error");
+        }
+    }
 }
