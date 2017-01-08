@@ -1,9 +1,7 @@
 package task_10_multithread_demo;
-
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.ReentrantLock;
-
 //场景：多线程并发转账
 public class TestTransferMoney
 {

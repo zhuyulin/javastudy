@@ -1,5 +1,4 @@
 package task_10_multithread_demo;
-
 import java.util.*;
 import java.util.concurrent.*;
 
