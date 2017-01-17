@@ -2,7 +2,9 @@ package task_11_tutorial_multithread.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 import task_11_tutorial_multithread.dateobject.StudentDO;
 
 import java.util.List;
@@ -10,7 +12,7 @@ import java.util.List;
 /**
  * Created by Yuleen on 2016/12/17.
  */
-@Repository
+@Component
 public class StudentDAO  {
     @Autowired
     private JdbcTemplate jdbcTemplate;
